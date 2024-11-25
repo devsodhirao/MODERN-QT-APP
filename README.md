@@ -83,7 +83,7 @@ modern-qt-app/
 │   ├── backend/        # C++ production code
 │   └── backend_mock/   # QML rapid development
 │
-└── 🧪 Tests
+└── 🧪 Tests (WIP)
     ├── backend/        # C++ unit tests
     └── qml/            # QML & integration tests
 ```
@@ -123,23 +123,6 @@ RootStore
 ├── UserStore       # User preferences
 └── SettingsStore   # Application settings
 ```
-
-## 🚀 Key Features
-
-- **📱 Modern UI**
-  - Material Design
-  - Responsive layouts
-  - Clean aesthetics
-
-- **🔒 Authentication**
-  - Role-based access
-  - Secure storage
-  - Mock/real implementations
-
-- **🧪 Testing**
-  - Comprehensive test suite
-  - Mock vs real comparison
-  - Integration tests
 
 ## 🛠️ Tech Stack
 
