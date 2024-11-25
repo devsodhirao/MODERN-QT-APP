@@ -119,9 +119,7 @@ modern-qt-app/
 
 ```
 RootStore
-├── LoginStore      # Authentication state
-├── UserStore       # User preferences
-└── SettingsStore   # Application settings
+└── LoginStore      # Authentication state
 ```
 
 ## 🛠️ Tech Stack

@@ -2,5 +2,3 @@ Module Backend
 RootStore 1.0 RootStore.qml
 LoginStore 1.0 LoginStore.qml
 SettingsStore 1.0 SettingsStore.qml
-//DemoFileStore 1.0 DemoFileStore.qml
-//PatientStore 1.0 PatientStore.qml

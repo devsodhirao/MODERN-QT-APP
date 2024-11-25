@@ -116,10 +116,15 @@ Project {
     qt6Project: true
 
     /* List of plugin directories passed to QML runtime */
-    importPaths: ["imports", "asset_imports", "backend_mock"]
+    importPaths: [
+        ".",
+        "imports",
+        "asset_imports",
+        "backend_mock"
+    ]
 
     /* Required for deployment */
-    targetDirectory: "/opt/ModernQtApp"
+    targetDirectory: "/opt/ModernQt"
 
     qdsVersion: "4.3"
 
