@@ -1,0 +1,8 @@
+#pragma once
+
+// CMake configured options
+#cmakedefine USE_MOCK_BACKEND
+
+// Test environment configuration
+#define TEST_QML_DIR "${CMAKE_SOURCE_DIR}/tests/qml"
+#define TEST_DATA_DIR "${CMAKE_SOURCE_DIR}/tests/data"

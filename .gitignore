@@ -1,0 +1,28 @@
+# Qt-specific
+*.pro.user
+*.pro.user.*
+*.qmlc
+*.jsc
+*.qm
+*.autosave
+.qmake.stash
+CMakeLists.txt.user
+moc_*.cpp
+qrc_*.cpp
+ui_*.h
+
+# Build directories
+build/
+debug/
+release/
+.qt/
+
+# IDE-specific
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS-specific
+.DS_Store
+Thumbs.db
