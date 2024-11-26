@@ -1207,5 +1207,6 @@
 <file>./content/controls/VirtualKeyboardPanel.qml</file>
 <file>./content/views/MainView.qml</file>
 <file>./content/views/MainView.ui.qml</file>
+<file>./content/qmldir</file>
 </qresource>
 </RCC>
