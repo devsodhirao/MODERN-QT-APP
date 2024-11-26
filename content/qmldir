@@ -1,25 +1,14 @@
-module content
-
-# Design Studio UI Components
+module Content
 DemoButtonGUI 1.0 controls/DemoButtonGUI.ui.qml
 DemoLabelGUI 1.0 controls/DemoLabelGUI.ui.qml
 HomeViewGUI 1.0 views/HomeViewGUI.ui.qml
 MainViewGUI 1.0 views/MainViewGUI.ui.qml
 LoginPanelGUI 1.0 panels/loginsetup/LoginPanelGUI.ui.qml
-
-# Implementation Components
 DemoButtonImp 1.0 controls/DemoButtonImp.qml
 DemoLabelImp 1.0 controls/DemoLabelImp.qml
 HomeViewImp 1.0 views/HomeViewImp.qml
 MainViewImp 1.0 views/MainViewImp.qml
 LoginPanelImp 1.0 panels/loginsetup/LoginPanelImp.qml
-
-# Utility Components
 KeyboardAwareContainer 1.0 controls/KeyboardAwareContainer.qml
 VirtualKeyboardPanel 1.0 controls/VirtualKeyboardPanel.qml
-
-# Main App
 App 1.0 App.qml
-
-# Designer support
-designersupported

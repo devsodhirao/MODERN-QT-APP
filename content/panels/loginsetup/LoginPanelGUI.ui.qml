@@ -1,3 +1,4 @@
+
 /*
 This is a UI file (.ui.qml) that is intended to be edited in Qt Design Studio only.
 It is supposed to be strictly declarative and only uses a subset of QML. If you edit
@@ -5,18 +6,17 @@ this file manually, you might introduce QML code that is not supported by Qt Des
 Check out https://doc.qt.io/qtcreator/creator-quick-ui-forms.html for details on .ui.qml files.
 */
 
+
 /**
  * Login panel with username/password form and error handling.
  * Emits loginClicked signal when user attempts to log in.
  * Shows error message if login validation fails.
  */
-
 import QtQuick 6.5
 import QtQuick.Controls 6.5
 import QtQuick.Layouts 6.5
 import ModernQtGUI 1.0
-import "../../controls"
-import "../"
+import content 1.0
 
 Item {
     id: rootId
@@ -62,9 +62,10 @@ Item {
                 Layout.fillWidth: true
                 height: Constants.inputHeight
                 color: Constants.colorsTextPrimary
-                placeholderTextColor: Qt.rgba(Constants.colorsTextPrimary.r, 
-                                            Constants.colorsTextPrimary.g, 
-                                            Constants.colorsTextPrimary.b, 0.5)
+                placeholderTextColor: Qt.rgba(Constants.colorsTextPrimary.r,
+                                              Constants.colorsTextPrimary.g,
+                                              Constants.colorsTextPrimary.b,
+                                              0.5)
                 background: Rectangle {
                     color: Constants.colorsBackgroundHighlighted
                     radius: Constants.defaultRadius
@@ -85,9 +86,10 @@ Item {
                 Layout.fillWidth: true
                 height: Constants.inputHeight
                 color: Constants.colorsTextPrimary
-                placeholderTextColor: Qt.rgba(Constants.colorsTextPrimary.r, 
-                                            Constants.colorsTextPrimary.g, 
-                                            Constants.colorsTextPrimary.b, 0.5)
+                placeholderTextColor: Qt.rgba(Constants.colorsTextPrimary.r,
+                                              Constants.colorsTextPrimary.g,
+                                              Constants.colorsTextPrimary.b,
+                                              0.5)
                 background: Rectangle {
                     color: Constants.colorsBackgroundHighlighted
                     radius: Constants.defaultRadius
@@ -111,7 +113,7 @@ Item {
                             rootId.showErrorMessage = true
                         } else {
                             rootId.loginClicked(usernameTextFieldId.text,
-                                             passwordTextFieldId.text)
+                                                passwordTextFieldId.text)
                         }
                     }
                 }

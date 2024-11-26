@@ -19,7 +19,7 @@ QtObject {
     signal logoutSuccess()
 
     function login(username, password) {
-        if (username === "user" && password === "demo") {
+        if (username === "user" && password === "user") {
             rootId.userRole = roleUser
             rootId.loginFailed = false
             rootId.currentUsername = username

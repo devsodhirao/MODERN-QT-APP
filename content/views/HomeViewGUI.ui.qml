@@ -1,7 +1,9 @@
+
 /*
 This is a UI file (.ui.qml) that is intended to be edited in Qt Design Studio only.
 It is supposed to be strictly declarative and only uses a subset of QML.
 */
+
 
 /**
  * @file HomeViewGUI.ui.qml
@@ -9,7 +11,6 @@ It is supposed to be strictly declarative and only uses a subset of QML.
  * This file defines the UI for the home view of the application.
  * It includes components for managing users, displaying content, and handling login/logout functionality.
  */
-
 import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
@@ -17,8 +18,7 @@ import ModernQtGUI 1.0
 import Backend 1.0
 
 // Local imports
-import "../controls"
-import "../panels/loginsetup"
+import content 1.0
 
 Item {
     id: rootId
@@ -37,7 +37,11 @@ Item {
         StackView {
             id: stackView
             anchors.fill: parent
-            initialItem: Item { Text { text: "Welcome!" } } // Placeholder for initial content
+            initialItem: Item {
+                Text {
+                    text: "Welcome!"
+                }
+            } // Placeholder for initial content
         }
     }
 }

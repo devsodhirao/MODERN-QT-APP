@@ -1,8 +1,9 @@
+
+
 /**
  * Custom button with rounded corners and gradient background.
  * Exposes background and mouse area for styling and interaction.
  */
-
 import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
@@ -19,16 +20,14 @@ Button {
     // Button configuration
     flat: true
     text: "My Button"
-    
+
     // Sizing
     implicitWidth: Math.max(
-        buttonBackgroundId ? buttonBackgroundId.implicitWidth : 0,
-        contentItem.implicitWidth + leftPadding + rightPadding
-    )
+                       buttonBackgroundId ? buttonBackgroundId.implicitWidth : 0,
+                       contentItem.implicitWidth + leftPadding + rightPadding)
     implicitHeight: Math.max(
-        buttonBackgroundId ? buttonBackgroundId.implicitHeight : 0,
-        contentItem.implicitHeight + topPadding + bottomPadding
-    )
+                        buttonBackgroundId ? buttonBackgroundId.implicitHeight : 0,
+                        contentItem.implicitHeight + topPadding + bottomPadding)
     leftPadding: 4
     rightPadding: 4
 
@@ -39,7 +38,7 @@ Button {
         implicitHeight: 40
         opacity: enabled ? 1 : 0.3
         radius: 5
-        
+
         // Colors
         color: Constants.colorsBackground
         border.color: Constants.colorsBackgroundHighlighted
@@ -56,11 +55,12 @@ Button {
             height: parent.height * 0.5
             radius: parent.radius
             opacity: 0.4
-            
+
             gradient: Gradient {
-                GradientStop { 
+                GradientStop {
                     position: 0.0
-                    color: Qt.lighter(Constants.colorsBackgroundHighlighted, 1.3)
+                    color: Qt.lighter(Constants.colorsBackgroundHighlighted,
+                                      1.3)
                 }
                 GradientStop {
                     position: 1.0
@@ -80,7 +80,7 @@ Button {
             height: parent.height * 0.5
             radius: parent.radius
             opacity: 0.4
-            
+
             gradient: Gradient {
                 GradientStop {
                     position: 0.0
@@ -102,7 +102,7 @@ Button {
         color: Constants.colorsTextPrimary
         horizontalAlignment: Text.AlignHCenter
         verticalAlignment: Text.AlignVCenter
-        elide: Text.ElideRight
+        anchors.centerIn: parent
     }
 
     // States

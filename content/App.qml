@@ -16,9 +16,6 @@ import ModernQtGUI 1.0
 import Backend 1.0
 import content 1.0
 
-// Local imports
-import "views"
-import "controls"
 
 Window {
     id: rootId

@@ -33,13 +33,13 @@ DemoLabelGUI {
         }
     }
 
-    // Hover handling
+    // Hover state
     HoverHandler {
         id: hoverHandler
-        onHoveredChanged: {
-            if (control.enabled) {
-                control.opacity = hovered ? 0.8 : 1.0
-            }
-        }
     }
+
+    // State-based opacity handling
+    opacity: !enabled ? 0.3 
+            : hoverHandler.hovered ? 0.8 
+            : 1.0
 }

@@ -13,9 +13,6 @@ import content 1.0
 DemoButtonGUI {
     id: control
 
-    buttonBackgroundAlias.width: control.width - Constants.smallMargin * 2
-    buttonBackgroundAlias.height: control.height - Constants.smallMargin * 2
-
     Behavior on scale { NumberAnimation { duration: 200 } }
 
     mouseAreaAlias {
