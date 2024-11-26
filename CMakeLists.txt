@@ -38,8 +38,6 @@ if (BUILD_QDS_COMPONENTS)
     include(${CMAKE_CURRENT_SOURCE_DIR}/qmlcomponents)
 endif()
 
-add_subdirectory(backend)
-
 include(${CMAKE_CURRENT_SOURCE_DIR}/qmlmodules)
 
 if (LINK_INSIGHT)
@@ -52,3 +50,4 @@ install(TARGETS ModernQtApp
   LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
   RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
 )
+

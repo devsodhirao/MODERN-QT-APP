@@ -26,6 +26,10 @@ QtObject {
     readonly property color colorsBackground: "#1E2A3E"        // Deep navy - main background
     readonly property color colorsBackgroundHighlighted: "#2A3B55"  // Lighter navy - highlighted areas
     readonly property color colorsTextPrimary: "#FFFFFF"    // Pure white - primary text
+    readonly property color colorsTextSecondary: "#B8C5D9"  // Light gray - secondary text
+    readonly property color colorsError: "#FF4444"          // Bright red - error states
+    readonly property color colorsSuccess: "#4CAF50"        // Green - success states
+    readonly property color colorsWarning: "#FFC107"        // Amber - warning states
     
     // Dimensions
     readonly property real defaultMargin: 16 * scale
@@ -64,6 +68,6 @@ QtObject {
 
     // Density-independent pixel function
     function dp(value) {
-        return value * rootId.scale
+        return Math.round(value * rootId.scale)
     }
 }

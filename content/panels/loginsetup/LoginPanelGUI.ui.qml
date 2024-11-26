@@ -50,10 +50,9 @@ Item {
             spacing: Constants.defaultMargin
             width: Math.min(parent.width * 0.8, Constants.contentMaxWidth)
 
-            DemoLabel {
+            DemoLabelImp {
                 id: usernameLabelId
-                text: qsTr("Username")
-                color: Constants.colorsTextPrimary
+                labelText: qsTr("Username")
                 Layout.fillWidth: true
             }
 
@@ -72,10 +71,9 @@ Item {
                 }
             }
 
-            DemoLabel {
+            DemoLabelImp {
                 id: passwordLabelId
-                text: qsTr("Password")
-                color: Constants.colorsTextPrimary
+                labelText: qsTr("Password")
                 Layout.fillWidth: true
                 Layout.topMargin: Constants.smallMargin
             }
@@ -119,15 +117,16 @@ Item {
                 }
             }
 
-            Label {
+            DemoLabelImp {
                 id: errorLabelId
-                text: rootId.errorMessage
-                color: "#FF4444"
+                labelText: rootId.errorMessage
+                fontSize: Constants.fontSizeSmall
+                multiline: true
                 visible: rootId.showErrorMessage
                 Layout.fillWidth: true
                 Layout.topMargin: Constants.smallMargin
                 horizontalAlignment: Text.AlignHCenter
-                wrapMode: Text.Wrap
+                color: Constants.colorsError
             }
         }
     }

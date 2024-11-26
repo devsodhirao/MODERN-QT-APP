@@ -12,8 +12,6 @@ qt6_add_qml_module(content
         App.qml
         panels/loginsetup/LoginPanelGUI.ui.qml
         panels/loginsetup/LoginPanelImp.qml
-        controls/DemoLabel.ui.qml
-        controls/DemoLabel.qml
         controls/DemoButtonGUI.ui.qml
         controls/DemoLabelImp.qml
         controls/KeyboardAwareContainer.qml

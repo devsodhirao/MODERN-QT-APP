@@ -15,16 +15,8 @@ DemoButtonGUI {
     Behavior on scale { NumberAnimation { duration: 200 } }
 
     mouseAreaAlias {
-        onEntered: {
-            if (!control.down) {
-                buttonBackgroundAlias.opacity = 0.8
-            }
-        }
-        onExited: {
-            if (!control.down) {
-                buttonBackgroundAlias.opacity = 1.0
-            }
-        }
+        onEntered: buttonBackgroundAlias.opacity = 0.8
+        onExited: buttonBackgroundAlias.opacity = 1.0
         onPressed: {
             buttonBackgroundAlias.opacity = 0.6
             control.scale = 0.98
