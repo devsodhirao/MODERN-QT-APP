@@ -20,8 +20,8 @@ import "../"
 
 Item {
     id: rootId
-    width: Constants.appContentWidth // Placeholder width for design
-    height: Constants.appContentHeight // Placeholder height for design
+    width: Constants.appContentWidth
+    height: Constants.appContentHeight
 
     property int loginLevel: -1
     property alias formAlias: loginFormContainerId
@@ -45,50 +45,89 @@ Item {
         }
 
         ColumnLayout {
+            id: formLayoutId
             anchors.centerIn: parent
-            spacing: 20
+            spacing: Constants.defaultMargin
+            width: Math.min(parent.width * 0.8, Constants.contentMaxWidth)
 
             DemoLabel {
                 id: usernameLabelId
                 text: qsTr("Username")
+                color: Constants.colorsTextPrimary
+                Layout.fillWidth: true
             }
 
             TextField {
                 id: usernameTextFieldId
-                placeholderText: qsTr("Username")
-                Layout.preferredWidth: 450
+                placeholderText: qsTr("Enter your username")
+                Layout.fillWidth: true
+                height: Constants.inputHeight
+                color: Constants.colorsTextPrimary
+                placeholderTextColor: Qt.rgba(Constants.colorsTextPrimary.r, 
+                                            Constants.colorsTextPrimary.g, 
+                                            Constants.colorsTextPrimary.b, 0.5)
+                background: Rectangle {
+                    color: Constants.colorsBackgroundHighlighted
+                    radius: Constants.defaultRadius
+                }
             }
 
             DemoLabel {
                 id: passwordLabelId
                 text: qsTr("Password")
+                color: Constants.colorsTextPrimary
+                Layout.fillWidth: true
+                Layout.topMargin: Constants.smallMargin
             }
 
             TextField {
                 id: passwordTextFieldId
-                placeholderText: qsTr("Password")
+                placeholderText: qsTr("Enter your password")
                 echoMode: TextInput.Password
-                Layout.preferredWidth: 450
+                Layout.fillWidth: true
+                height: Constants.inputHeight
+                color: Constants.colorsTextPrimary
+                placeholderTextColor: Qt.rgba(Constants.colorsTextPrimary.r, 
+                                            Constants.colorsTextPrimary.g, 
+                                            Constants.colorsTextPrimary.b, 0.5)
+                background: Rectangle {
+                    color: Constants.colorsBackgroundHighlighted
+                    radius: Constants.defaultRadius
+                }
             }
 
             DemoButtonImp {
                 id: loginButtonId
                 text: qsTr("Login")
-                Layout.preferredWidth: 200
-                font.pixelSize: 20
+                Layout.alignment: Qt.AlignHCenter
+                Layout.preferredWidth: Math.min(200, parent.width * 0.5)
+                Layout.topMargin: Constants.defaultMargin
+                height: Constants.buttonHeight
+                font.pixelSize: Constants.fontSizeLarge
 
                 Connections {
                     target: loginButtonId
                     onClicked: {
                         if (usernameTextFieldId.text === ""
                                 || passwordTextFieldId.text === "") {
-                            rootId.showErrorMessage
+                            rootId.showErrorMessage = true
                         } else {
                             rootId.loginClicked(usernameTextFieldId.text,
                                              passwordTextFieldId.text)
                         }
                     }
                 }
+            }
+
+            Label {
+                id: errorLabelId
+                text: rootId.errorMessage
+                color: "#FF4444"
+                visible: rootId.showErrorMessage
+                Layout.fillWidth: true
+                Layout.topMargin: Constants.smallMargin
+                horizontalAlignment: Text.AlignHCenter
+                wrapMode: Text.Wrap
             }
         }
     }

@@ -5,24 +5,8 @@ import Backend 1.0
 import "../controls"
 import "../panels/loginsetup"
 
-/**
- * Main View Implementation
- * 
- * Handles the main application view logic and state management.
- * Manages login state and user interface transitions.
- * 
- * Features:
- * - Login state management via RootStore
- * - View transitions and animations
- * - Error handling and user feedback
- * 
- * Note: The RootStore is instantiated at the App level and passed down
- * to ensure consistent state management across the application.
- */
 MainViewGUI {
     id: rootId
-
-    property var rootStore
 
     Component.onCompleted: {
         if (rootStore && rootStore.loginStore && rootStore.loginStore.loginFailed) {
@@ -30,8 +14,7 @@ MainViewGUI {
         }
         contentLoader.sourceComponent = loginPanelId
     }
-    
-    // Login panel component
+
     Component {
         id: loginPanelId
         LoginPanelImp {
@@ -40,26 +23,25 @@ MainViewGUI {
             rootStore: rootId.rootStore
         }
     }
-    
-    function handleLoginFailure() {
-        errorDialogId.text = qsTr("Login failed. Please check your credentials.")
-        errorDialogId.open()
-    }
 
-    // Error handling dialog
     Dialog {
-        id: errorDialogId
+        id: errorDialog
         anchors.centerIn: parent
         modal: true
         title: qsTr("Error")
         standardButtons: Dialog.Ok
-        property alias text: messageTextId.text
+        property alias text: messageText.text
 
         Text {
-            id: messageTextId
+            id: messageText
             width: parent.width
             wrapMode: Text.WordWrap
             color: Constants.colorsTextPrimary
         }
+    }
+
+    function handleLoginFailure() {
+        errorDialog.text = qsTr("Login failed. Please check your credentials.")
+        errorDialog.open()
     }
 }

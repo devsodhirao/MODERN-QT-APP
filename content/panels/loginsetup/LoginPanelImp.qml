@@ -16,14 +16,23 @@ LoginPanelGUI {
     height: Constants.appContentHeight
 
     property RootStore rootStore
+    loginLevel: rootStore && rootStore.loginStore ? rootStore.loginStore.userRole : -1
 
     onLoginClicked: (username, password) => {
         console.log("Login attempt with:", username)
-        if (rootStore) {
-            // Here we would typically validate with rootStore
-            // For demo, just show success via the error message
+        if (rootStore && rootStore.loginStore) {
+            rootStore.loginStore.login(username, password)
+        }
+    }
+
+    Connections {
+        target: rootStore ? rootStore.loginStore : null
+        function onLoginSuccess(username, role) {
             showErrorMessage = false
-            rootStore.setLoginLevel(1)  // Assuming 1 is a valid login level
+            loginLevel = role
+        }
+        function onLoginFailed(reason) {
+            showErrorMessage = true
         }
     }
 }

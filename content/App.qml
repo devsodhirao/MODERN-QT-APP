@@ -11,9 +11,9 @@ import QtQuick
 import QtQuick.Controls
 import QtQuick.Window
 import QtQuick.VirtualKeyboard
-import "views"
 import ModernQtGUI 1.0
 import Backend 1.0
+import "views"
 
 Window {
     id: rootId
@@ -63,7 +63,7 @@ Window {
     }
 
     // Main application content
-    AppGUI {
+    MainViewImp {
         id: appContentId
         anchors.fill: parent
         rootStore: RootStore {}

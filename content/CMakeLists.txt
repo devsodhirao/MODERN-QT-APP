@@ -9,7 +9,6 @@ qt6_add_qml_module(content
     VERSION 1.0
     RESOURCE_PREFIX "/qt/qml"
     QML_FILES
-        AppGUI.ui.qml
         App.qml
         panels/loginsetup/LoginPanelGUI.ui.qml
         panels/loginsetup/LoginPanelImp.qml
@@ -17,10 +16,14 @@ qt6_add_qml_module(content
         controls/DemoLabel.qml
         controls/DemoButtonGUI.ui.qml
         controls/DemoLabelImp.qml
+        controls/KeyboardAwareContainer.qml
         controls/DemoLabelGUI.ui.qml
+        controls/VirtualKeyboardPanel.qml
         controls/DemoButtonImp.qml
         views/HomeViewGUI.ui.qml
         views/MainViewImp.qml
+        views/MainView.ui.qml
+        views/MainView.qml
         views/MainViewGUI.ui.qml
         views/HomeViewImp.qml
 

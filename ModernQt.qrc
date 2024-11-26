@@ -1203,5 +1203,9 @@
 <file>./tests/qml/mock/tst_loginstore.qml</file>
 <file>./tests/qml/unit/tst_demolabel.qml</file>
 <file>./tests/test_config.h.in</file>
+<file>./content/controls/KeyboardAwareContainer.qml</file>
+<file>./content/controls/VirtualKeyboardPanel.qml</file>
+<file>./content/views/MainView.qml</file>
+<file>./content/views/MainView.ui.qml</file>
 </qresource>
 </RCC>

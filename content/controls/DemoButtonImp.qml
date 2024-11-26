@@ -9,8 +9,8 @@ import ModernQtGUI
 DemoButtonGUI {
     id: control
 
-    buttonBackgroundAlias.width: control.width - Constants.dp(10)
-    buttonBackgroundAlias.height: control.height - Constants.dp(10)
+    buttonBackgroundAlias.width: control.width - Constants.smallMargin * 2
+    buttonBackgroundAlias.height: control.height - Constants.smallMargin * 2
 
     Behavior on scale { NumberAnimation { duration: 200 } }
 
@@ -22,17 +22,16 @@ DemoButtonGUI {
         }
         onExited: {
             if (!control.down) {
-                buttonBackgroundAlias.opacity = enabled ? 1.0 : 0.3
+                buttonBackgroundAlias.opacity = 1.0
             }
         }
         onPressed: {
             buttonBackgroundAlias.opacity = 0.6
-            control.scale = 0.9
+            control.scale = 0.98
         }
         onReleased: {
-            buttonBackgroundAlias.opacity = mouseAreaAlias.containsMouse ? 0.8 : (enabled ? 1.0 : 0.3)
+            buttonBackgroundAlias.opacity = mouseAreaAlias.containsMouse ? 0.8 : 1.0
             control.scale = 1.0
         }
-        onClicked: control.clicked()
     }
 }

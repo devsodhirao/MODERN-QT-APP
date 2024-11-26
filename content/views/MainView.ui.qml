@@ -5,6 +5,14 @@ this file manually, you might introduce QML code that is not supported by Qt Des
 Check out https://doc.qt.io/qtcreator/creator-quick-ui-forms.html for details on .ui.qml files.
 */
 
+/**
+ * @file AppGUI.ui.qml
+ *
+ * This file defines the main GUI component of the application.
+ * It imports necessary modules and contains the root item of the GUI.
+ * The root item includes the MainViewImp which displays our modern login interface.
+ * Virtual keyboard support is maintained for C++ compatibility.
+ */
 import QtQuick
 import QtQuick.Controls
 import ModernQtGUI 1.0
@@ -13,11 +21,11 @@ import "../controls"
 
 Rectangle {
     id: rootId
+    width: Constants.appContentWidth
+    height: Constants.appContentHeight
     color: Constants.colorsBackground
 
     property RootStore rootStore
-    property alias contentLoader: contentLoaderId
-    property alias contentContainer: contentContainerId
 
     VirtualKeyboardPanel {
         id: inputPanelId
@@ -33,9 +41,11 @@ Rectangle {
             anchors.fill: parent
             anchors.margins: Constants.contentPadding
 
-            Loader {
-                id: contentLoaderId
+            MainViewImp {
+                id: mainViewId
                 anchors.fill: parent
+                rootStore: rootId.rootStore
+                clip: true
             }
         }
     }

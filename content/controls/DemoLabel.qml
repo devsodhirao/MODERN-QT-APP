@@ -13,6 +13,6 @@ import ModernQtGUI
 Label {
     id: control
     color: Constants.colorsTextPrimary
-    font.pixelSize: Constants.dp(16)
+    font.pixelSize: Constants.fontSizeMedium
     font.weight: Font.Medium
 }

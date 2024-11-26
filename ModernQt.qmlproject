@@ -2,8 +2,8 @@ import QmlProject
 
 Project {
     mainFile: "content/App.qml"
-    mainUiFile: "content/AppGUI.ui.qml"
-
+    mainUiFile: "content/views/MainViewGUI.ui.qml"
+    
     /* Include .qml, .js, and image files from current directory and subdirectories */
     QmlFiles {
         directory: "content"
@@ -18,18 +18,12 @@ Project {
     QmlFiles {
         directory: "content/panels"
     }
-    QmlFiles {
-        directory: "content/panels/calibration"
-    }
 
     QmlFiles {
 
         directory: "content/panels/loginsetup"
     }
-    QmlFiles {
 
-        directory: "content/panels/placement"
-    }
 
     QmlFiles {
         directory: "imports"
