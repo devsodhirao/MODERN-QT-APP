@@ -6,15 +6,14 @@ this file manually, you might introduce QML code that is not supported by Qt Des
 Check out https://doc.qt.io/qtcreator/creator-quick-ui-forms.html for details on .ui.qml files.
 */
 
-
 /**
  * Login panel with username/password form and error handling.
  * Emits loginClicked signal when user attempts to log in.
  * Shows error message if login validation fails.
  */
-import QtQuick 6.5
-import QtQuick.Controls 6.5
-import QtQuick.Layouts 6.5
+import QtQuick
+import QtQuick.Controls
+import QtQuick.Layouts
 import ModernQtGUI 1.0
 import content 1.0
 

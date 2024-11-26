@@ -1,5 +1,3 @@
-
-
 /**
  * Custom button with rounded corners and gradient background.
  * Exposes background and mouse area for styling and interaction.
@@ -143,5 +141,6 @@ Button {
         id: mouseAreaId
         anchors.fill: parent
         hoverEnabled: true
+        onClicked: rootId.clicked()
     }
 }
