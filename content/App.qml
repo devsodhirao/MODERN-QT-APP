@@ -30,10 +30,13 @@ Window {
     title: qsTr("Modern Qt Demo")
 
     // Dynamic scaling based on window size
-    property real scaleFactor: Math.min(width / Constants.appWidth, height / Constants.appHeight)
+    readonly property real scaleFactor: Math.min(width / Constants.appWidth, height / Constants.appHeight)
     
-    onScaleFactorChanged: {
-        Constants.scale = scaleFactor
+    // Bind Constants.scale directly to scaleFactor
+    Binding {
+        target: Constants
+        property: "scale"
+        value: rootId.scaleFactor
     }
 
     // Error boundary for catching unhandled errors
