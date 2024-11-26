@@ -6,9 +6,11 @@
    It imports the ModernQtGUI module and the custom controls module.
  */
 import QtQuick
+import QtQuick.Controls
+import QtQuick.Layouts
 import ModernQtGUI 1.0
 import Backend 1.0
-import "../../controls"
+import content 1.0
 
 LoginPanelGUI {
     id: rootId

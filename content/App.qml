@@ -11,9 +11,14 @@ import QtQuick
 import QtQuick.Controls
 import QtQuick.Window
 import QtQuick.VirtualKeyboard
+import QtQuick.Layouts
 import ModernQtGUI 1.0
 import Backend 1.0
+import content 1.0
+
+// Local imports
 import "views"
+import "controls"
 
 Window {
     id: rootId

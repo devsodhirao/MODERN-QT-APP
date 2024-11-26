@@ -5,7 +5,9 @@
 
 import QtQuick
 import QtQuick.Controls
-import ModernQtGUI
+import QtQuick.Layouts
+import ModernQtGUI 1.0
+import Backend 1.0
 
 Button {
     id: rootId

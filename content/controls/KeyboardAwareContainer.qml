@@ -1,4 +1,9 @@
 import QtQuick
+import QtQuick.Controls
+import QtQuick.Layouts
+import ModernQtGUI 1.0
+import Backend 1.0
+import content 1.0
 
 Item {
     id: root

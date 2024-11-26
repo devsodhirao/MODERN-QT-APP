@@ -114,7 +114,8 @@ Project {
         ".",
         "imports",
         "asset_imports",
-        "backend_mock"
+        "backend_mock",
+        "content"
     ]
 
     /* Required for deployment */
