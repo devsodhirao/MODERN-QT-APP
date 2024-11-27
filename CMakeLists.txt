@@ -8,7 +8,7 @@ project(ModernQtApp LANGUAGES CXX)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(QT_QML_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/qml)
-set(QML_IMPORT_PATH ${QT_QML_OUTPUT_DIRECTORY}
+set(QML_IMPORT_PATH ${QT_QML_OUTPUT_DIRECTORY} ${CMAKE_CURRENT_SOURCE_DIR}/backend_mock
     CACHE STRING "Import paths for Qt Creator's code model"
     FORCE
 )
@@ -37,7 +37,7 @@ target_link_libraries(ModernQtApp PRIVATE
 if (BUILD_QDS_COMPONENTS)
     include(${CMAKE_CURRENT_SOURCE_DIR}/qmlcomponents)
 endif()
-
+add_subdirectory(backend)
 include(${CMAKE_CURRENT_SOURCE_DIR}/qmlmodules)
 
 if (LINK_INSIGHT)
@@ -51,3 +51,8 @@ install(TARGETS ModernQtApp
   RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
 )
 
+# Install Backend QML module
+install(DIRECTORY backend_mock/Backend
+        DESTINATION ${CMAKE_INSTALL_PREFIX}/qml
+        FILES_MATCHING PATTERN "*.qml" PATTERN "qmldir"
+)
