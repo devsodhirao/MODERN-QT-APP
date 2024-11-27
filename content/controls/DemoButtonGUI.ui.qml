@@ -14,7 +14,11 @@ Button {
     // Public properties
     property alias buttonBackgroundAlias: buttonBackgroundId
     property alias mouseAreaAlias: mouseAreaId
-
+    
+    // Animation properties
+    property real scaleValue: 1.0
+    property real opacityValue: 1.0
+    
     // Button configuration
     flat: true
     text: "My Button"
@@ -34,7 +38,7 @@ Button {
         id: buttonBackgroundId
         implicitWidth: 100
         implicitHeight: 40
-        opacity: enabled ? 1 : 0.3
+        opacity: opacityValue
         radius: 5
 
         // Colors
@@ -136,6 +140,8 @@ Button {
             easing.type: Easing.OutQuad
         }
     }
+
+    scale: scaleValue
 
     MouseArea {
         id: mouseAreaId

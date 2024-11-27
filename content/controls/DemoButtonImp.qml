@@ -13,24 +13,32 @@ import content 1.0
 DemoButtonGUI {
     id: control
 
-    Behavior on scale { NumberAnimation { duration: 200 } }
-
     // Handle hover effect
     HoverHandler {
-        onHoveredChanged: {
-            buttonBackgroundAlias.opacity = hovered ? 0.8 : 1.0
-        }
+        id: hoverHandler
+        onHoveredChanged: control.opacityValue = hovered ? 0.8 : 1.0
     }
 
     mouseAreaAlias {
         onPressed: {
-            buttonBackgroundAlias.opacity = 0.6
-            control.scale = 0.98
+            control.opacityValue = 0.6
+            control.scaleValue = 0.98
         }
         onReleased: {
-            buttonBackgroundAlias.opacity = 1.0
-            control.scale = 1.0
+            control.opacityValue = hoverHandler.hovered ? 0.8 : 1.0
+            control.scaleValue = 1.0
         }
-        onClicked: control.clicked()  // Forward the click to the Button
+        onClicked: control.clicked()
     }
+
+    transitions: [
+        Transition {
+            from: "*"; to: "*"
+            NumberAnimation {
+                properties: "scaleValue,opacityValue"
+                duration: 200
+                easing.type: Easing.OutQuad
+            }
+        }
+    ]
 }
