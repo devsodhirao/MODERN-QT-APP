@@ -15,16 +15,22 @@ DemoButtonGUI {
 
     Behavior on scale { NumberAnimation { duration: 200 } }
 
+    // Handle hover effect
+    HoverHandler {
+        onHoveredChanged: {
+            buttonBackgroundAlias.opacity = hovered ? 0.8 : 1.0
+        }
+    }
+
     mouseAreaAlias {
-        onEntered: buttonBackgroundAlias.opacity = 0.8
-        onExited: buttonBackgroundAlias.opacity = 1.0
         onPressed: {
             buttonBackgroundAlias.opacity = 0.6
             control.scale = 0.98
         }
         onReleased: {
-            buttonBackgroundAlias.opacity = mouseAreaAlias.containsMouse ? 0.8 : 1.0
+            buttonBackgroundAlias.opacity = 1.0
             control.scale = 1.0
         }
+        onClicked: control.clicked()  // Forward the click to the Button
     }
 }

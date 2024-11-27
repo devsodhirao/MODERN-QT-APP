@@ -141,6 +141,5 @@ Button {
         id: mouseAreaId
         anchors.fill: parent
         hoverEnabled: true
-        onClicked: rootId.clicked()
     }
 }
