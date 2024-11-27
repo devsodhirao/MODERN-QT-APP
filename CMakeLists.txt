@@ -51,8 +51,3 @@ install(TARGETS ModernQtApp
   RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
 )
 
-# Install Backend QML module
-install(DIRECTORY backend_mock/Backend
-        DESTINATION ${CMAKE_INSTALL_PREFIX}/qml
-        FILES_MATCHING PATTERN "*.qml" PATTERN "qmldir"
-)
