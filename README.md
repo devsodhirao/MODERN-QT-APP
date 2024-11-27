@@ -1,8 +1,10 @@
 # 🚀 Modern Qt Demo
 
-> A simple example of building clean, modern Qt applications with Design Studio and Qt Creator hand in hand. Based on my own work as well as input from one of the authors for Qt CoreUI, Bram Santoso. 
+> A simple example of building clean, modern Qt applications with Design Studio and Qt Creator hand in hand. Based on my own work as well as input from one of the authors for Qt CoreUI, Bram Santoso (https://luxoft.github.io/qml-coreui/). 
+
 > I am also developing an AI agent that will drastically speed up this type of structured design, CI/CD with potentailly even squish testing, making the turnaround on prototypes and production code, significantly faster.
 
+> If you're new to Qt, or running a startup in which needs Qt (think anything Medtech, Automotive, Factory, Robotics GUI, embedded). In fact even veterans struggle with separation. I've consulted a dozen companies that have loved this framework because it gets them up and running, and it keeps them out of trouble.
 
 ## 🏆 Key Wins
 
@@ -10,6 +12,7 @@
   - Designers work freely in Qt Design Studio with `.ui.qml` files
   - Developers implement logic in parallel with `.qml` files
   - No stepping on each other's toes
+  - As you create components, Design studio allows you to run them inpendently. As you stack them, you can test those too, and you can also run the whole app with mocked data.
 
 - **Rapid Prototyping**
   - Mock backend lets you build UI without waiting for backend
@@ -17,16 +20,15 @@
   - Quick iterations with stakeholders
 
 - **Clean Architecture**
-  - Perfect separation between UI and logic
+  - Clear separation between UI and logic
   - Easy to modify one without breaking the other
-  - Clear boundaries make maintenance a breeze
 
 - **Production Ready**
   - Seamless switch from mock to real backend
   - Same interface, different implementation
   - No UI changes needed when going live
 
-- **Testing Paradise**
+- **Testing Facilities** (WIP)
   - UI can be tested independently
   - Backend can be tested separately
   - Easy to verify both implementations match
@@ -56,7 +58,7 @@ We believe in a clean, iterative approach to Qt development:
 
 3. ⚡ **Mock First Development**
    ```qml
-   // Quick iteration with mock backend
+   // Quick iteration with mock backend. We can mock models, services, etc, without having to change the backend.
    QtObject {
        function login(username, password) {
            // Instant feedback during development
@@ -167,3 +169,12 @@ The mock backend provides:
 - Check console logs for "[Mock]" messages to track state
 - System messages provide user-friendly status updates
 - Switch between mock and real backend without UI changes
+
+
+## TODO
+- Complete Tests + a CI/CD pipeline to demonstrate how to run that. Tests should ideally run locally and on something like GitHub Actions
+- Add Squish tests 
+- Installation and library management
+- Isolate out the bindings to stores such that components can even with some data at individual levels
+- Release AI agent tuned to write Qt and Squish code, as well as CI/CD pipelines
+- Bugs i might have introduced as i experimented with Code generation to test the custom GPT, will need to be fixed
