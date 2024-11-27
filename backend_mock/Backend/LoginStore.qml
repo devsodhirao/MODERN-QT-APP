@@ -1,7 +1,7 @@
 import QtQuick
 
 QtObject {
-    id: rootId
+    id: loginStoreMockId
 
     // Role constants
     readonly property int roleLoggedOut: -1
@@ -20,31 +20,35 @@ QtObject {
 
     function login(username, password) {
         if (username === "user" && password === "user") {
-            rootId.userRole = roleUser
-            rootId.loginFailed = false
-            rootId.currentUsername = username
+            loginStoreMockId.userRole = roleUser
+            loginStoreMockId.loginFailed = false
+            loginStoreMockId.currentUsername = username
             loginSuccess(username, roleUser)
-            console.log("User login successful")
+            console.log("[Mock] User login successful")
+            rootStoreMockId.addSystemMessage("User logged in successfully", "success")
         } else if (username === "admin" && password === "admin") {
-            rootId.userRole = roleAdmin
-            rootId.loginFailed = false
-            rootId.currentUsername = username
+            loginStoreMockId.userRole = roleAdmin
+            loginStoreMockId.loginFailed = false
+            loginStoreMockId.currentUsername = username
             loginSuccess(username, roleAdmin)
-            console.log("Admin login successful")
+            console.log("[Mock] Admin login successful")
+            rootStoreMockId.addSystemMessage("Administrator logged in successfully", "success")
         } else {
-            rootId.userRole = roleLoggedOut
-            rootId.loginFailed = true
-            rootId.currentUsername = ""
+            loginStoreMockId.userRole = roleLoggedOut
+            loginStoreMockId.loginFailed = true
+            loginStoreMockId.currentUsername = ""
             loginFailed("Invalid username or password")
-            console.log("Login failed")
+            console.log("[Mock] Login failed")
+            rootStoreMockId.addSystemMessage("Login failed: Invalid credentials", "error")
         }
     }
 
     function logout() {
-        console.log("Logging out user:", currentUsername)
-        rootId.userRole = roleLoggedOut
-        rootId.currentUsername = ""
-        rootId.loginFailed = false
+        console.log("[Mock] Logging out user:", currentUsername)
+        rootStoreMockId.addSystemMessage(`User ${currentUsername} logged out`, "info")
+        loginStoreMockId.userRole = roleLoggedOut
+        loginStoreMockId.currentUsername = ""
+        loginStoreMockId.loginFailed = false
         logoutSuccess()
     }
 
@@ -70,7 +74,7 @@ QtObject {
 
     // Debug helper
     onUserRoleChanged: {
-        console.log("Login status changed:", {
+        console.log("[Mock] Login status changed:", {
             role: userRole,
             roleText: getRoleText(),
             username: currentUsername

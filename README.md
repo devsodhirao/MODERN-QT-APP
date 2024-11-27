@@ -60,7 +60,7 @@ We believe in a clean, iterative approach to Qt development:
    QtObject {
        function login(username, password) {
            // Instant feedback during development
-           return username === "demo"
+           return username === "user" || username === "admin"
        }
    }
    ```
@@ -77,7 +77,8 @@ modern-qt-app/
 │   │   ├── controls/   # Reusable UI components
 │   │   ├── panels/     # Feature-specific views
 │   │   └── views/      # Main application views
-│   └── imports/        # UI resources & assets
+│   ├── imports/        # QML imports and modules
+│   └── asset_imports/  # Design assets and resources
 │
 ├── 🔧 Backend Layer
 │   ├── backend/        # C++ production code
@@ -124,7 +125,7 @@ RootStore
 
 ## 🛠️ Tech Stack
 
-- **Qt 6.5**
+- **Qt 6.2**
   - QML for modern UI
   - C++ for backend
   - Qt Quick Controls 2
@@ -133,3 +134,36 @@ RootStore
   - CMake configuration
   - Clean dependency management
   - Mock/production switching
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Qt 6.2 or higher
+- Qt Creator or Qt Design Studio
+- CMake 3.21.1 or higher
+
+### Building the Project
+1. Clone the repository
+2. Open the project in Qt Creator
+3. Configure the project with your Qt kit
+4. Build and run
+
+### Mock Backend Credentials
+For testing with the mock backend, use these credentials:
+
+| Role | Username | Password |
+|------|----------|----------|
+| User | `user` | `user` |
+| Admin | `admin` | `admin` |
+
+The mock backend provides:
+- Console logging with "[Mock]" prefix
+- System messages for login/logout events
+- Different access levels (User/Admin)
+- Instant feedback without backend setup
+
+### Development Tips
+- Use the mock backend for rapid UI development
+- Check console logs for "[Mock]" messages to track state
+- System messages provide user-friendly status updates
+- Switch between mock and real backend without UI changes
